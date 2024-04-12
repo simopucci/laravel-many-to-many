@@ -48,13 +48,15 @@ class ProjectController extends Controller
 
         $data = $request->all();
 
-        $img_path = Storage::put('uploads/projects', $data["image"]);
-
+        
         $project = new Project;
-
+        
         $project->fill($data);
         $project->slug = Str::slug($project->title);
 
+        $img_path = Storage::put('uploads/projects', $data["image"]);
+        $project->image = $img_path;
+        
         $project->save();
 
         $project->technologies()->attach($data['technologies']);

@@ -19,9 +19,14 @@
         </h1>
 
         <div class="d-flex gap-4 mt-4">
-            {{-- <figure>
-                <img src="" alt="{{ $project->title }} image">
-            </figure> --}}
+            @if(!empty($project->image))
+                
+            <figure>
+                <img class="img-thumbnail" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }} image">
+            </figure>
+
+            @endif
+
 
             <div>
                 <h2><span class="fw-bold text-capitalize mb-2 fs-5 d-inline-block me-2">Title:</span>{{ $project->title }}
