@@ -37,6 +37,13 @@
                 @enderror
             </div>
 
+            <div class="col-6">
+                <div class="mb-5">
+                    <label for="image" class="form-label">Project's Image:</label>
+                    <input class="form-control" type="file" name="image" id="image">
+                </div>
+            </div>
+
             {{-- technologies checkbox col --}}
             <div class="col-12 ">
                 <label for="" class="form-label mb-2">Project's Technologies:</label>

@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -46,6 +47,8 @@ class ProjectController extends Controller
         $request->validated();
 
         $data = $request->all();
+
+        $img_path = Storage::put('uploads/projects', $data["image"]);
 
         $project = new Project;
 

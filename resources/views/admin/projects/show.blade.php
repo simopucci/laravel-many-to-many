@@ -19,9 +19,9 @@
         </h1>
 
         <div class="d-flex gap-4 mt-4">
-            <figure>
+            {{-- <figure>
                 <img src="" alt="{{ $project->title }} image">
-            </figure>
+            </figure> --}}
 
             <div>
                 <h2><span class="fw-bold text-capitalize mb-2 fs-5 d-inline-block me-2">Title:</span>{{ $project->title }}

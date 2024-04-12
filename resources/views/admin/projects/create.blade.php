@@ -7,7 +7,7 @@
 
         <h1 class="my-3">Add a new Project</h1>
 
-        <form action="{{ route('admin.projects.store') }}" method="POST" class="row gy-4">
+        <form enctype="multipart/form-data" action="{{ route('admin.projects.store') }}" method="POST" class="row gy-4">
             @csrf
 
             <div class="col-6">
@@ -18,6 +18,7 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+
             <div class="col-6">
                 <label for="type_id" class="form-label mb-2">Project's Type</label>
                 <select name="type_id" id="type_id" class="form-select" required>
@@ -31,6 +32,15 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+
+            <div class="col-6">
+                <div class="mb-5">
+                    <label for="image" class="form-label">Project's Image:</label>
+                    <input class="form-control" type="file" name="image" id="image">
+                </div>
+            </div>
+            
+
 
             {{-- technologies checkbox col --}}
             <div class="col-12 ">
